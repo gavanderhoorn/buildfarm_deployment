@@ -46,6 +46,7 @@ class { 'jenkins::slave':
   manage_slave_user => false,
   executors => '1',
   install_java => false,
+  version => '1.22',
   require => User['jenkins-slave'],
 }
 

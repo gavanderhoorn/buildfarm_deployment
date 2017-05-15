@@ -65,6 +65,7 @@ class { 'jenkins::slave':
   slave_user => 'jenkins-slave',
   manage_slave_user => false,
   executors => hiera('jenkins::slave::num_executors', 1),
+  version => '1.22',
   require => User['jenkins-slave'],
 }
 
