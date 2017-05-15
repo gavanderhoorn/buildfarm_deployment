@@ -1,6 +1,19 @@
 include apt
 
-include jenkins
+## add jenkins debian/ubuntu apt repo - stable version
+apt::source { 'jenkins_stable':
+  location    => 'https://pkg.jenkins.io/debian-stable',
+  release     => 'binary/',
+  repos       => '',
+  key         => '150FDE3F7787E7D11EF4E12A9B7D32F2D50582E6',
+  key_source  => 'https://pkg.jenkins.io/debian-stable/jenkins.io.key',
+  include_src => false,
+}
+
+
+class { 'jenkins':
+  repo => false,
+}
 
 include jenkins_files
 
