@@ -651,6 +651,7 @@ class { 'apache':
 }
 
 apache::vhost { 'master':
+  servername => hiera('master::hostname'),
   docroot => '/var/www.html',
   port    => '80',
   proxy_pass => [
