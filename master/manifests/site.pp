@@ -13,6 +13,7 @@ apt::source { 'jenkins_stable':
 
 class { 'jenkins':
   repo => false,
+  require => Class['apt::update']
 }
 
 include jenkins_files
